@@ -9,19 +9,46 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root")
-    
-    
-    function App() {
-        const [counter, modifier] = React.useState(0)
-        console.log(data)
+    function MinutesToHours() {
+        const [amount, setAmount] = React.useState(0)
+        const [flipped, setFlipped] = React.useState(false)
+        const onChange = (event) => {
+            setAmount(event.target.value)
+        }
+        const reset = () => setAmount(0)
+        const onFlip = () => {
+            reset();
+            setFlipped(current => !current)
+        }
         return (
             <div>
-                <h3>Total Clicks: {data[0]}</h3>
-                <button>Click me!</button>
+                <div>
+                    <label htmlFor="Minutes">Minutes </label>
+                    <input value={flipped ? amount * 60 : amount} id="Minutes" placeholder="Miutes" type="number" onChange={onChange} disabled={flipped} />
+                </div>
+                <div>
+                    <h4>You want to convert {amount}</h4>
+                    <label htmlFor="Hours">Hours </label>
+                    <input value={flipped ? amount : Math.round(amount / 60)} id="Hours" placeholder="Hours" type="number" onChange={onChange} disabled={!flipped} />
+                </div>
+                <button onClick={reset}>Reset</button>
+                <button onClick={onFlip}>{flipped ? "Turn back" : "Flip"}</button>
             </div>
         )
     }
-    render();
+    function KmToMiles() {
+        return <h3>KM 2 M</h3>
+    }
+    function App() {
+        const [index, setIndex] = React.useState(0)
+        return (
+            <div>
+                <h1>Super Converter</h1>
+                <MinutesToHours />
+            </div>
+        )
+    }
+    ReactDOM.render(<App />, root);
 </script>
 
 </html>
