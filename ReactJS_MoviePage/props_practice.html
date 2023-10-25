@@ -6,30 +6,35 @@
 </body>
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script> <!-- prop type을 아기 위한 script -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    function Btn({ btnText, changeValue }) {
-        console.log(btnText, "was rendered")
+    function Btn({ btnText, fontSize = 14 }) {
         return (
             <button
-                onClick={changeValue}
+                // onClick={changeValue}
                 style={{
                     backgroundColor: "tomato",
                     color: "white",
                     padding: "10px 20px",
                     border: 0,
                     borderRadius: 10,
+                    fontSize,
                 }}>{btnText}</button>
         )
     }
-    const MemorizedBtn = React.memo(Btn)
+    Btn.propTypes = {
+        btnText: PropTypes.string.isRequired,
+        fontSize: PropTypes.number.isRequired,
+    }
+    // const MemorizedBtn = React.memo(Btn)
     function App() {
         const [value, setValue] = React.useState("Save Changes")
-        const changeValue = () => setValue("Revert Changes")
+        // const changeValue = () => setValue("Revert Changes")
         return (
             <div>
-                <MemorizedBtn btnText={value} changeValue={changeValue} />
-                <MemorizedBtn btnText="Continue" big={false} />
+                <Btn btnText={value} fontSize={18} />
+                <Btn btnText="Continue" />
             </div>
         )
     }
