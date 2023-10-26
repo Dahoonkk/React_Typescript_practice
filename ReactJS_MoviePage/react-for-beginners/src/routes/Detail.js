@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
+import "./Detail.module.css";
 
 function Detail() {
-    const { id } = useParams()
-    const [movie, setMovie] = useState([])
-    const getMovie = async() => {
-        const json = await( await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
-        setMovie(json)
-    }
-    useEffect(() => {
-        getMovie();
-    }, [])
-    console.log(id)
-    return (
-        <h1>Detail</h1>
-    )
+  return (
+    <div className="about__container">
+      <span>
+        “Freedom is the freedom to say that two plus two make four. If that is
+        granted, all else follows.”
+      </span>
+      <span>− George Orwell, 1984</span>
+    </div>
+  );
 }
 
 export default Detail;
