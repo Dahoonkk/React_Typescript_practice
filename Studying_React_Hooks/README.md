@@ -4,18 +4,20 @@ Collection of React Hooks ready to install with NPM
 
 ## ✔ What is hooks?
 - react의 state machine에 연결하는 기본적인 방법
+- state, component에 대한 것들을 많이 바
 
-- [ ] [useTitle](https://dahoonkk.gihub.com)
-- [ ] [useInput]()
+- [x] [useTitle]()
+- [x] [useInput]()
 - [ ] [usePageLeave]()
 - [ ] [useClick]()
+- [x] [useEffect]()
 - [ ] [useFadeIn]()
 - [ ] [useFullscreen]()
 - [ ] [useHover]()
 - [ ] [useNetwork]()
 - [ ] [useNotification]()
 - [ ] [useScroll]()
-- [ ] [useTabs]()
+- [x] [useTabs]()
 - [ ] [usePreventLeave]()
 - [ ] [useConfirm]()
 - [ ] [useAxios]()
