@@ -20,5 +20,5 @@ Collection of React Hooks ready to install with NPM
 - [x] [useNetwork](/Studying_React_Hooks/studying-hooks/src/useNetwork.js)
 - [x] [useScroll](/Studying_React_Hooks/studying-hooks/src/useScroll.js)
 - [x] [useFullscreen](/Studying_React_Hooks/studying-hooks/src/useFullscreen.js)
-- [ ] [useNotification](/Studying_React_Hooks/studying-hooks/src/useNotification.js)
-- [ ] [useAxios](/Studying_React_Hooks/studying-hooks/src/useAxios.js)
+- [x] [useNotification](/Studying_React_Hooks/studying-hooks/src/useNotification.js)
+- [x] [useAxios](/Studying_React_Hooks/studying-hooks/src/useAxios.js)
