@@ -5,7 +5,8 @@ import { RouterProvider } from 'react-router-dom';
 import Home from './routes/home';
 import Login from './routes/login';
 import CreateAccount from './routes/create-account';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import LoadingScreen from './components/loading-screen';
 
 const router = createBrowserRouter([
   {
@@ -29,11 +30,19 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-
+  const [isLoading, setLoading] = useState(true);
+  const init = async () => {
+    // wait for DB
+    setTimeout(() => setLoading(false), 2000);
+    // setLoading(false);    
+  }
+  useEffect(() => {
+    init();
+  }, []);
   return (
     <>
-      <div className="bg-blue-900 aspect-square ">
-        <RouterProvider router={router} />
+      <div className="bg-blue-950">
+        {isLoading ? <LoadingScreen/> : <RouterProvider router={router} />}
       </div>
     </>
   )
